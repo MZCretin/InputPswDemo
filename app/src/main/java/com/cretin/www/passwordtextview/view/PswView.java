@@ -1,12 +1,10 @@
 package com.cretin.www.passwordtextview.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -33,20 +31,15 @@ public class PswView extends View {
     private OnPswChangedListener onPswChanged;
 
     public PswView(Context context) {
-        this(context, null, 0, 0);
+        this(context, null, 0);
     }
 
     public PswView(Context context, AttributeSet attrs) {
-        this(context, attrs, 0, 0);
+        this(context, attrs, 0);
     }
 
     public PswView(Context context, AttributeSet attrs, int defStyleAttr) {
-        this(context, attrs, defStyleAttr, 0);
-    }
-
-    @TargetApi( Build.VERSION_CODES.LOLLIPOP )
-    public PswView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
+        super(context, attrs, defStyleAttr);
         TypedArray tArray = context.obtainStyledAttributes(attrs, R.styleable.PwdTextView);//获取配置属性
         mPsw_size = tArray.getDimensionPixelSize(R.styleable.PwdTextView_psw_size, 20);
         mPsw_color = tArray.getColor(R.styleable.PwdTextView_psw_color, Color.BLACK);
