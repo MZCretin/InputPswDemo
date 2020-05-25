@@ -1,35 +1,78 @@
 package com.cretin.www.passwordtextview;
 
-import android.graphics.Rect;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
+import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cretin.www.passwordtextview.popwindow.SelectPopupWindow;
+import com.cretin.tools.inputpsw.dialog.PswInputDialog;
 
-public class MainActivity extends AppCompatActivity implements SelectPopupWindow.OnPopWindowClickListener{
-    private SelectPopupWindow menuWindow;
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+    //记录用户选择的密码位数
+    private int pswCount = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final List<TextView> viewList = new ArrayList<>();
+        viewList.add((TextView) findViewById(R.id.tv_3));
+        viewList.add((TextView) findViewById(R.id.tv_4));
+        viewList.add((TextView) findViewById(R.id.tv_5));
+        viewList.add((TextView) findViewById(R.id.tv_6));
+        viewList.add((TextView) findViewById(R.id.tv_7));
+        viewList.add((TextView) findViewById(R.id.tv_8));
+        viewList.add((TextView) findViewById(R.id.tv_9));
+
+        for (int i = 0; i < viewList.size(); i++) {
+            final int finalI = i;
+            viewList.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    pswCount = finalI + 3;
+                    for (TextView textView : viewList) {
+                        textView.setBackgroundResource(R.drawable.shape_round_gray);
+                        textView.setTextColor(Color.parseColor("#999999"));
+                    }
+                    viewList.get(finalI).setBackgroundResource(R.drawable.shape_round_orange);
+                    viewList.get(finalI).setTextColor(Color.parseColor("#E98A16"));
+                }
+            });
+        }
     }
 
     //打开输入密码的对话框
-    public void inoutPsw(View view){
-        menuWindow = new SelectPopupWindow(this, this);
-        Rect rect = new Rect();
-        getWindow().getDecorView().getWindowVisibleDisplayFrame(rect);
-        int winHeight = getWindow().getDecorView().getHeight();
-        menuWindow.showAtLocation(getWindow().getDecorView(), Gravity.BOTTOM, 0, winHeight - rect.bottom);
-    }
-
-    @Override
-    public void onPopWindowClickListener(String psw, boolean complete) {
-        if(complete)
-            Toast.makeText(this, "您输入的密码是"+psw, Toast.LENGTH_SHORT).show();
+    public void inoutPsw(View view) {
+        //获取配置信息
+        SwitchCompat switch_btn = findViewById(R.id.switch_btn);
+        PswInputDialog commDialog = new PswInputDialog(this);
+        commDialog.showPswDialog();
+        if (!switch_btn.isChecked()) {
+            //隐藏忘记密码的入口
+            commDialog.hideForgetPswClickListener();
+        }
+        //设置忘记密码的点击事件
+        commDialog.setOnForgetPswClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "您点击了忘记密码", Toast.LENGTH_SHORT).show();
+            }
+        });
+        //设置密码长度
+        commDialog.setPswCount(pswCount);
+        commDialog.setListener(new PswInputDialog.OnPopWindowClickListener() {
+            @Override
+            public void onPopWindowClickListener(String psw, boolean complete) {
+                if (complete)
+                    Toast.makeText(MainActivity.this, "你输入的密码是：" + psw, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

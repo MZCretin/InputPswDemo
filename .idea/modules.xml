@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InputPswDemo.iml" filepath="$PROJECT_DIR$/InputPswDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PasswordTextView.iml" filepath="$PROJECT_DIR$/PasswordTextView.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inputpswlibrary/inputpswlibrary.iml" filepath="$PROJECT_DIR$/inputpswlibrary/inputpswlibrary.iml" />
     </modules>
   </component>
 </project>

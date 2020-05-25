@@ -1,4 +1,4 @@
-package com.cretin.www.passwordtextview.adapter;
+package com.cretin.tools.inputpsw;
 
 import android.content.Context;
 import android.util.SparseArray;

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InputpswLibrary</string>
+    <string name="str_input_psw">输入支付密码</string>
+    <string name="str_forget_psw">忘记密码？</string>
+</resources>

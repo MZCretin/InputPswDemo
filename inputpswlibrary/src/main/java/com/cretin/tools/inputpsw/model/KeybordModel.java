@@ -1,4 +1,4 @@
-package com.cretin.www.passwordtextview.model;
+package com.cretin.tools.inputpsw.model;
 
 /**
  * Created by cretin on 2017/1/7.

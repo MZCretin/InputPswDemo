@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+
+    <LinearLayout
+        android:id="@+id/pop_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_input_psw"
+                android:textColor="#000000"
+                android:layout_gravity="center"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:padding="10dp"
+                android:layout_alignParentRight="true"
+                android:id="@+id/iv_close"
+                android:layout_marginRight="6dp"
+                android:src="@mipmap/guanbi"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <com.cretin.tools.inputpsw.view.PswView
+            android:id="@+id/pswView"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_forget_psw"
+            android:layout_gravity="right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/str_forget_psw"
+            android:textColor="#666666"
+            android:textSize="14sp"/>
+
+        <View
+            android:layout_marginTop="15dp"
+            android:background="#dedede"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <GridView
+            android:background="#dedede"
+            android:horizontalSpacing="1dp"
+            android:verticalSpacing="1dp"
+            android:id="@+id/gridView"
+            android:numColumns="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+</RelativeLayout>

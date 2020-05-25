@@ -1,4 +1,4 @@
-package com.cretin.www.passwordtextview.view;
+package com.cretin.tools.inputpsw.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,7 +8,8 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cretin.www.passwordtextview.R;
+import com.cretin.tools.inputpsw.R;
+
 
 /**
  * Created by cretin on 2017/1/6.
@@ -76,7 +77,6 @@ public class PswView extends View {
         setMeasuredDimension(mWidth, mHeight);
     }
 
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -141,11 +141,12 @@ public class PswView extends View {
         void onPswChanged(String psw, boolean complete);
     }
 
-    public int getmPsw_count() {
+    public int getPsw_count() {
         return mPsw_count;
     }
 
-    public void setmPsw_count(int mPsw_count) {
+    public void setPsw_count(int mPsw_count) {
         this.mPsw_count = mPsw_count;
+        invalidate();
     }
 }

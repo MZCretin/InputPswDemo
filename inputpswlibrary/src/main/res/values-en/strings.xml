@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">InputpswLibrary</string>
+  <string name="str_input_psw">please input payment password</string>
+  <string name="str_forget_psw">forget password?</string>
+</resources>
