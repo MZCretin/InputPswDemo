@@ -35,7 +35,7 @@
 
 ### Demo体验
 
-[Demo下载](https://raw.githubusercontent.com/MZCretin/AutoUpdateProject/master/pics/demo.apk)
+[Demo下载](https://raw.githubusercontent.com/MZCretin/InputPswDemo/master/pics/demo.apk)
 
 ### API
 ```
