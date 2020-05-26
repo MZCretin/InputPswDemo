@@ -56,22 +56,22 @@ public class MainActivity extends AppCompatActivity {
     public void inoutPsw(View view) {
         //获取配置信息
         SwitchCompat switch_btn = findViewById(R.id.switch_btn);
-        PswInputDialog commDialog = new PswInputDialog(this);
-        commDialog.showPswDialog();
+        PswInputDialog pswInputDialog = new PswInputDialog(this);
+        pswInputDialog.showPswDialog();
         if (!switch_btn.isChecked()) {
             //隐藏忘记密码的入口
-            commDialog.hideForgetPswClickListener();
+            pswInputDialog.hideForgetPswClickListener();
         }
         //设置忘记密码的点击事件
-        commDialog.setOnForgetPswClickListener(new View.OnClickListener() {
+        pswInputDialog.setOnForgetPswClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "您点击了忘记密码", Toast.LENGTH_SHORT).show();
             }
         });
         //设置密码长度
-        commDialog.setPswCount(pswCount);
-        commDialog.setListener(new PswInputDialog.OnPopWindowClickListener() {
+        pswInputDialog.setPswCount(pswCount);
+        pswInputDialog.setListener(new PswInputDialog.OnPopWindowClickListener() {
             @Override
             public void onPopWindowClickListener(String psw, boolean complete) {
                 if (complete)
