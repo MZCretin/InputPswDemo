@@ -11,6 +11,7 @@
 + [一键打开WebView件-WebViewUtils](https://github.com/MZCretin/WebViewUtils)
 + [简约动态权限申请库-FanPermission](https://github.com/MZCretin/FanPermission)
 + [弹出自定义支付密码输入框-InputPswDemo](https://github.com/MZCretin/InputPswDemo)
++ [安卓常用工具集成-AndroidUtils](https://github.com/MZCretin/AndroidUtilsProject)
 
 这是一个支付密码的demo，点击输入密码，弹出一个popwindow进行密码的输入，可以对密码的长度进行设置，可以自定义展示的效果
 
